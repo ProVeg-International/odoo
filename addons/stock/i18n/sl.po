@@ -8228,7 +8228,7 @@ msgstr "Vrsta izvorne lokacije"
 #. module: stock
 #: model_terms:ir.ui.view,arch_db:stock.message_body
 msgid "Source Location:"
-msgstr ""
+msgstr "Lokacija vira:"
 
 #. module: stock
 #: model_terms:ir.ui.view,arch_db:stock.report_reception_report_label
@@ -9481,7 +9481,7 @@ msgstr "USPS povezovalnik"
 #: code:addons/stock/static/src/components/reception_report_line/stock_reception_report_line.xml:0
 #, python-format
 msgid "Unassign"
-msgstr ""
+msgstr "Prekliči dodelitev"
 
 #. module: stock
 #. odoo-javascript

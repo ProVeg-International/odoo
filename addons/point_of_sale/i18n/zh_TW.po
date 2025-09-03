@@ -1,27 +1,29 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* point_of_sale
-# 
+# * point_of_sale
+#
 # Translators:
 # 敬雲 林 <chingyun@yuanchih-consult.com>, 2023
 # Martin Trigaux, 2024
 # Pak Wai Ho, 2024
 # Wil Odoo, 2025
 # Tony Ng, 2025
-# 
+# "Tony Ng (ngto)" <ngto@odoo.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-05-09 20:36+0000\n"
-"PO-Revision-Date: 2023-10-26 23:09+0000\n"
-"Last-Translator: Tony Ng, 2025\n"
-"Language-Team: Chinese (Taiwan) (https://app.transifex.com/odoo/teams/41243/zh_TW/)\n"
+"PO-Revision-Date: 2025-08-21 14:04+0000\n"
+"Last-Translator: \"Tony Ng (ngto)\" <ngto@odoo.com>\n"
+"Language-Team: Chinese (Traditional Han script) <https://translate.odoo.com/"
+"projects/odoo-17/point_of_sale/zh_Hant/>\n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 5.12.2\n"
 
 #. module: point_of_sale
 #. odoo-python
@@ -156,7 +158,7 @@ msgstr "(救援%(session)s)"
 #: code:addons/point_of_sale/static/src/app/screens/product_screen/product_info_popup/product_info_popup.xml:0
 #, python-format
 msgid "(as of opening)"
-msgstr "開店餘額"
+msgstr "（開店時結餘）"
 
 #. module: point_of_sale
 #: model_terms:ir.ui.view,arch_db:point_of_sale.res_config_settings_view_form
@@ -360,8 +362,8 @@ msgid ""
 "<strong> &gt; Payment Terminals</strong>\n"
 "                                    in order to install a Payment Terminal and make a fully integrated payment method."
 msgstr ""
-"<strong>&gt; 支付終端方式</strong>\n"
-"                                    安裝支付終端並實現完全整合的收付方式"
+"<strong> &gt; 付款終端機</strong>\n"
+"                                    以便安裝付款終端機，設立完全整合的付款方式。"
 
 #. module: point_of_sale
 #: model_terms:ir.ui.view,arch_db:point_of_sale.report_saledetails
@@ -522,7 +524,7 @@ msgstr "使用 Stripe 付款終端機接受付款"
 #. module: point_of_sale
 #: model_terms:ir.ui.view,arch_db:point_of_sale.res_config_settings_view_form
 msgid "Accept payments with a Vantiv payment terminal"
-msgstr "接受Vantiv支付終端的付款"
+msgstr "使用 Vantiv 付款終端機接受付款"
 
 #. module: point_of_sale
 #: model_terms:ir.ui.view,arch_db:point_of_sale.res_config_settings_view_form
@@ -749,7 +751,7 @@ msgstr "Adyen"
 #. module: point_of_sale
 #: model:ir.model.fields,field_description:point_of_sale.field_res_config_settings__module_pos_adyen
 msgid "Adyen Payment Terminal"
-msgstr "Adyen 支付終端"
+msgstr "Adyen 付款終端機"
 
 #. module: point_of_sale
 #. odoo-javascript
@@ -1830,7 +1832,7 @@ msgstr "從公司貨幣到訂單貨幣的轉換率。"
 #: code:addons/point_of_sale/static/src/app/screens/product_screen/product_info_popup/product_info_popup.xml:0
 #, python-format
 msgid "Cost:"
-msgstr "成本:"
+msgstr "成本："
 
 #. module: point_of_sale
 #. odoo-javascript
@@ -2690,7 +2692,7 @@ msgstr "額外資訊"
 #. module: point_of_sale
 #: model:product.attribute,name:point_of_sale.fabric_attribute
 msgid "Fabric"
-msgstr "Fabric"
+msgstr "材質"
 
 #. module: point_of_sale
 #: model:ir.model.fields,field_description:point_of_sale.field_pos_order__failed_pickings
@@ -2710,7 +2712,7 @@ msgstr "打印訂單變化時失敗了"
 #: code:addons/point_of_sale/static/src/app/screens/product_screen/product_info_popup/product_info_popup.xml:0
 #, python-format
 msgid "Financials"
-msgstr "財務"
+msgstr "財務資訊"
 
 #. module: point_of_sale
 #. odoo-javascript
@@ -2772,7 +2774,7 @@ msgstr "頁尾"
 #: model:ir.model.fields,help:point_of_sale.field_pos_config__iface_big_scrollbars
 #: model:ir.model.fields,help:point_of_sale.field_res_config_settings__pos_iface_big_scrollbars
 msgid "For imprecise industrial touchscreens."
-msgstr "面向不精確的工業用觸摸屏。"
+msgstr "改善不精確觸控螢幕的導航及操作。"
 
 #. module: point_of_sale
 #. odoo-python
@@ -3057,7 +3059,7 @@ msgstr "匯入訂單"
 #. module: point_of_sale
 #: model_terms:ir.ui.view,arch_db:point_of_sale.res_config_settings_view_form
 msgid "Improve navigation for imprecise industrial touchscreens"
-msgstr "改善不精確工業用觸摸屏的導航"
+msgstr "改善不精確觸控螢幕的導航及操作"
 
 #. module: point_of_sale
 #: model:ir.model.fields.selection,name:point_of_sale.selection__pos_session__state__opened
@@ -3635,7 +3637,7 @@ msgstr "毛利 (%)"
 #: code:addons/point_of_sale/static/src/app/screens/product_screen/product_info_popup/product_info_popup.xml:0
 #, python-format
 msgid "Margin:"
-msgstr "邊距:"
+msgstr "利潤："
 
 #. module: point_of_sale
 #: model:ir.model.fields,field_description:point_of_sale.field_pos_config__is_margins_costs_accessible_to_every_user
@@ -4566,7 +4568,7 @@ msgstr "PayTM"
 #. module: point_of_sale
 #: model:ir.model.fields,field_description:point_of_sale.field_res_config_settings__module_pos_paytm
 msgid "PayTM Payment Terminal"
-msgstr "PayTM 支付終端"
+msgstr "PayTM 付款終端機"
 
 #. module: point_of_sale
 #. odoo-javascript
@@ -4641,7 +4643,7 @@ msgstr "付款成功"
 #. module: point_of_sale
 #: model_terms:ir.ui.view,arch_db:point_of_sale.res_config_settings_view_form
 msgid "Payment Terminals"
-msgstr "支付終端"
+msgstr "付款終端機"
 
 #. module: point_of_sale
 #: model:ir.model.fields,field_description:point_of_sale.field_pos_payment__transaction_id
@@ -4957,14 +4959,14 @@ msgstr "POS產品類別"
 #. module: point_of_sale
 #: model:account.tax.group,name:point_of_sale.pos_taxe_group_0
 msgid "PoS Taxes"
-msgstr ""
+msgstr "POS 稅項"
 
 #. module: point_of_sale
 #. odoo-python
 #: code:addons/point_of_sale/models/pos_session.py:0
 #, python-format
 msgid "PoS order %s can not be processed"
-msgstr ""
+msgstr "未能處理 POS 訂單：%s"
 
 #. module: point_of_sale
 #: model_terms:ir.ui.view,arch_db:point_of_sale.view_partner_property_form
@@ -5872,7 +5874,7 @@ msgstr "移除"
 #: code:addons/point_of_sale/static/src/app/screens/product_screen/product_info_popup/product_info_popup.xml:0
 #, python-format
 msgid "Replenishment"
-msgstr "重訂貨規則"
+msgstr "補貨規則"
 
 #. module: point_of_sale
 #: model:ir.ui.menu,name:point_of_sale.menu_point_rep
@@ -6731,7 +6733,7 @@ msgstr "Stripe"
 #. module: point_of_sale
 #: model:ir.model.fields,field_description:point_of_sale.field_res_config_settings__module_pos_stripe
 msgid "Stripe Payment Terminal"
-msgstr "Stripe支付終端"
+msgstr "Stripe 付款終端機"
 
 #. module: point_of_sale
 #: model:ir.model.fields,field_description:point_of_sale.field_pos_order_line__price_subtotal_incl
@@ -6923,7 +6925,7 @@ msgstr "技術資料"
 #: code:addons/point_of_sale/static/src/app/screens/receipt_screen/receipt/receipt_header/receipt_header.xml:0
 #, python-format
 msgid "Tel:"
-msgstr "電話:"
+msgstr "電話："
 
 #. module: point_of_sale
 #. odoo-javascript
@@ -6978,6 +6980,9 @@ msgid ""
 "The datas received from the point of sale has been saved in the attachments.\n"
 "Please contact your support service to assist you on restoring it"
 msgstr ""
+"Odoo 伺服器已收到 POS 訂單，參考編號為 %s，但在訂單處理階段操作失敗。\n"
+"從 POS 接收到的資料，已儲存在附件中。\n"
+"請聯絡你的支援服務，以協助你恢復訂單。"
 
 #. module: point_of_sale
 #. odoo-python
@@ -8345,7 +8350,7 @@ msgstr "郵遞區號"
 #: code:addons/point_of_sale/static/src/app/screens/product_screen/product_info_popup/product_info_popup.xml:0
 #, python-format
 msgid "available,"
-msgstr "可用,"
+msgstr "可用，"
 
 #. module: point_of_sale
 #: model_terms:ir.ui.view,arch_db:point_of_sale.ticket_validation_screen
