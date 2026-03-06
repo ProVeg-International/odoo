@@ -2445,6 +2445,11 @@ class Binary(Field):
             super().compute_value(records)
 
     def read(self, records):
+        def _encode(s: str | bool) -> bytes | bool:
+            if isinstance(s, str):
+                return s.encode("utf-8")
+            return s
+
         # values are stored in attachments, retrieve them
         assert self.attachment
         domain = [
@@ -2452,9 +2457,9 @@ class Binary(Field):
             ('res_field', '=', self.name),
             ('res_id', 'in', records.ids),
         ]
-        # Note: the 'bin_size' flag is handled by the field 'datas' itself
+        bin_size = records.env.context.get('bin_size')
         data = {
-            att.res_id: att.datas
+            att.res_id: _encode(human_size(att.file_size)) if bin_size else att.datas
             for att in records.env['ir.attachment'].sudo().search(domain)
         }
         records.env.cache.insert_missing(records, self, map(data.get, records._ids))
@@ -2597,7 +2602,14 @@ class Image(Binary):
             record.env.cache.set(record, self, value, dirty=(self.store and self.column_type))
 
     def _image_process(self, value, env):
-        if self.readonly and not self.max_width and not self.max_height:
+        if self.readonly and (
+            (not self.max_width and not self.max_height)
+            or (
+                isinstance(self.related_field, Image)
+                and self.max_width == self.related_field.max_width
+                and self.max_height == self.related_field.max_height
+            )
+        ):
             # no need to process images for computed fields, or related fields
             return value
         try:

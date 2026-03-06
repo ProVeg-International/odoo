@@ -523,9 +523,9 @@ class AccountEdiFormat(models.Model):
         extract_digits = self._l10n_in_edi_extract_digits
         tax_details_by_code = self._get_l10n_in_tax_details_by_line_code(line_tax_details.get("tax_details", {}))
         line_details = {
-            "productName": line.product_id.name,
+            "productName": line.product_id.name[:100] if line.product_id else "",
             "hsnCode": extract_digits(line.product_id.l10n_in_hsn_code),
-            "productDesc": line.name,
+            "productDesc": line.name[:100] if line.name else "",
             "quantity": line.quantity,
             "qtyUnit": line.product_uom_id.l10n_in_code and line.product_uom_id.l10n_in_code.split("-")[0] or "OTH",
             "taxableAmount": self._l10n_in_round_value(line.balance * sign),
@@ -605,17 +605,21 @@ class AccountEdiFormat(models.Model):
     @api.model
     def _l10n_in_edi_ewaybill_connect_to_server(self, company, url_path, params):
         user_token = self.env["iap.account"].get("l10n_in_edi")
+        IrConfigParam = self.env["ir.config_parameter"].sudo()
         params.update({
             "account_token": user_token.account_token,
-            "dbuuid": self.env["ir.config_parameter"].sudo().get_param("database.uuid"),
+            "dbuuid": IrConfigParam.get_param("database.uuid"),
             "username": company.sudo().l10n_in_edi_ewaybill_username,
             "gstin": company.vat,
         })
+        gsp_provider = IrConfigParam.get_param("l10n_in.gsp_provider")
+        if gsp_provider:
+            params["gsp_provider"] = gsp_provider
         if company.sudo().l10n_in_edi_production_env:
             default_endpoint = DEFAULT_IAP_ENDPOINT
         else:
             default_endpoint = DEFAULT_IAP_TEST_ENDPOINT
-        endpoint = self.env["ir.config_parameter"].sudo().get_param("l10n_in_edi_ewaybill.endpoint", default_endpoint)
+        endpoint = IrConfigParam.get_param("l10n_in_edi_ewaybill.endpoint", default_endpoint)
         url = "%s%s" % (endpoint, url_path)
         try:
             response = jsonrpc(url, params=params, timeout=70)
